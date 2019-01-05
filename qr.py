@@ -9,8 +9,8 @@ import cv2
 import socket
 
 #networking
-HOST = '127.0.0.1'    # The remote host
-PORT = 50007              # The same port as used by the server
+HOST = '192.168.43.88'    # The remote host
+PORT = 8443              # The same port as used by the server
 
 
 
@@ -67,6 +67,7 @@ while True:
 		s.sendall(barcodeData)
 		data = s.recv(1024)
 		s.close()
+
 		if data != "null":
 			cv2.putText(frame,str(data), (x, y - 20),
 				cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
